@@ -1,5 +1,5 @@
 import { Check } from 'lucide-react'
-
+ 
 export default function DealersBuildersPage() {
   const dealerBenefits = [
     "You will get maximum reach to buyers through our services. Since the number of online users are increasing rapidly, it is important to discover them.",
@@ -21,6 +21,12 @@ export default function DealersBuildersPage() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       {/* Dealers Section */}
+      <img
+  src="https://www.thithithara.com/images/slider/builders-2.jpg"
+  alt="banner-1"
+  style={{ width: '100%', height: 'auto' }}
+/>
+
       <section className="mb-16">
         <h2 className="text-3xl font-bold text-blue-700 mb-8">Benefits for Dealers</h2>
         <div className="space-y-6">
