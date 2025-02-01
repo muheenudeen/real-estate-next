@@ -1,7 +1,6 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
 import { ChevronDown, Home } from 'lucide-react'
 
 export default function Navbar() {
@@ -12,13 +11,11 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
-              <Image
-                src="/placeholder.svg?height=40&width=150"
-                alt="Logo"
-                width={150}
-                height={40}
-                className="h-10 w-auto"
-              />
+           <img
+            src="https://www.thithithara.com/images/logo/logo-white.webp"
+            alt="Logo"
+            className="h-12 md:h-16"
+          />
             </Link>
           </div>
 
@@ -43,7 +40,7 @@ export default function Navbar() {
               For Dealers/Builders
             </Link>
 
-            <Link href="/service" className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">
+            <Link href="/services" className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">
               Other Services
             </Link>
 

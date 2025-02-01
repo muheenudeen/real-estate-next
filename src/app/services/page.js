@@ -4,19 +4,37 @@ const services = [
   {
     title: "Property Management",
     description: "We provide transparent, ideal and reliable property management solutions, including rental property management services.",
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/Property-Management-1.jpg",
     imageAlt: "Property Management Service"
   },
   {
     title: "Mortgage Service",
     description: "We provide mortgage services for more consumer and commercial loan products than any other loan service provider in Kerala.",
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/Mortgage-Service-2.jpg",
     imageAlt: "Mortgage Service"
   },
   {
     title: "Consulting Service",
     description: "Our management consulting services focus on the most critical issues and opportunities of our clients.",
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/Consulting-Service-3.jpg",
+    imageAlt: "Consulting Service"
+  },
+  {
+    title: "Legal Support",
+    description: "We provide legal aids for customers and we help for the registration, agreement drafting, verification, and related procedures.",
+    image: "/Legal-Support-4.jpg",
+    imageAlt: "Property Management Service"
+  },
+  {
+    title: "Home Buying",
+    description: "Thithithara provides home buying services which are reliable and budget friendly. We will guide through the whole process.",
+    image: "/Home-Buying-5.jpg",
+    imageAlt: "Mortgage Service"
+  },
+  {
+    title: "Home Selling",
+    description: "We offer home selling services for which we have posted the details of many houses for sale in Kerala on our website.",
+    image: "/Home-Selling-6.jpg",
     imageAlt: "Consulting Service"
   }
 ]
@@ -29,7 +47,7 @@ export default function ServicesPage() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {services.map((service, index) => (
           <div key={index} className="group bg-white rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-1">
-            <div className="relative h-64 w-full">
+            <div className="relative h-96 w-full">
               <Image
                 src={service.image}
                 alt={service.imageAlt}

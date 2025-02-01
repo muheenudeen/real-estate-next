@@ -8,6 +8,7 @@ export default function SignupForm({ onSignupSuccess }) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     password: '',
     usertype: 'Individual',
   })
@@ -54,6 +55,15 @@ export default function SignupForm({ onSignupSuccess }) {
         required
       />
       <input
+        type="tel"
+        name="phone"
+        value={formData.phone}
+        onChange={handleChange}
+        placeholder="Phone Number"
+        className="w-full p-2 border rounded"
+        required
+      />
+      <input
         type="password"
         name="password"
         value={formData.password}
@@ -82,4 +92,3 @@ export default function SignupForm({ onSignupSuccess }) {
     </form>
   )
 }
-

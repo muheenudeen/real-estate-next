@@ -1,6 +1,7 @@
 import ClientProviders from '@/components/ClientProviders/clientProviders'
 import Navbar from '@/components/Navbar/Navbar'
 import '@/app/globals.css'
+import Footer from '@/components/Footer/footer'
 
 export const metadata = {
   title: 'Real Estate Platform',
@@ -14,6 +15,8 @@ export default function RootLayout({ children }) {
         <ClientProviders>
           <Navbar />
           {children}
+          <Footer/>
+
         </ClientProviders>
       </body>
     </html>
