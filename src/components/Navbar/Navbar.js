@@ -5,17 +5,17 @@ import { ChevronDown, Home } from 'lucide-react'
 
 export default function Navbar() {
   return (
-    <nav className="bg-gray-50 shadow-sm">
+    <nav className="bg-slate-200 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
            <img
-            src="https://www.thithithara.com/images/logo/logo-white.webp"
+            src="https://www.thithithara.com/images/logo/logo.png"
             alt="Logo"
-            className="h-12 md:h-16"
-          />
+            className="h-12 md:h-16 "
+            />
             </Link>
           </div>
 
@@ -60,7 +60,7 @@ export default function Navbar() {
             </Link>
             
             <Link
-              href="/post-property"
+              href="/sidebar"
               className="flex items-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors"
             >
               Post Property

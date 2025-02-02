@@ -11,13 +11,11 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <Image
-              src=""
-              alt="Thithithara Logo"
-              width={200}
-              height={50}
-              className="mb-4"
-            />
+          <img
+            src="https://www.thithithara.com/images/logo/logo-white.webp"
+            alt="Logo"
+            className="h-12 md:h-16"
+          />
             <p className="text-sm">
               Thithithara is one of the best real estate websites in Kerala. You can buy rent or lease the property that
               you like. Being one of the best real estate websites in Kerala, thithithara.com is here to provide all the
@@ -114,7 +112,7 @@ export default function Footer() {
               <p>Malappuram, Kerala - 673 635</p>
               <p className="mt-4">
                 <a href="tel:+919048600044" className="hover:text-white">
-                  +91 9048 6000 44
+                  +91 9188 5858 59
                 </a>
               </p>
               <p>
