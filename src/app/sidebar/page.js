@@ -9,7 +9,7 @@ const Sidebar = () => {
 
   const menuItems = [
     { name: "Dashboard", icon: <Home size={20} />, link: "/" },
-    { name: "Add new", icon: <List size={20} />, link: "/add-new" },
+    { name: "Add new", icon: <List size={20} />, link: "/propertyForm" },
     { name: "My Properties", icon: <List size={20} />, link: "/properties" },
     { name: "Enquiries", icon: <MessageSquare size={20} />, link: "/enquiries" },
     { name: "My Subscriptions", icon: <List size={20} />, link: "/subscriptions" },
@@ -34,7 +34,7 @@ const Sidebar = () => {
             <li key={item.name}>
               <Link href={item.link} onClick={() => setActive(item.name)}>
                 <div className={`flex items-center p-2 rounded-lg cursor-pointer ${
-                  active === item.name ? "bg-blue-500 text-white" : "text-gray-700 hover:bg-gray-100"
+                  active === item.name ? " text-gray-700  hover:bg-blue-500"  : "text-gray-700 hover:bg-blue-500"
                 }`}>
                   <span className="mr-3">{item.icon}</span>
                   {item.name}
@@ -52,7 +52,7 @@ const Sidebar = () => {
             <li key={item.name}>
               <Link href={item.link} onClick={() => setActive(item.name)}>
                 <div className={`flex items-center p-2 rounded-lg cursor-pointer ${
-                  active === item.name ? "bg-red-500 text-white" : "text-gray-700 hover:bg-gray-100"
+                  active === item.name ? "bg-red-500 text-white" : "text-gray-700 hover:bg-red-500"
                 }`}>
                   <span className="mr-3">{item.icon}</span>
                   {item.name}

@@ -2,12 +2,12 @@ import { Bath, BedDouble, Maximize2 } from 'lucide-react'
 
 export function PropertyCard({ property }) {
   return (
-    <div className="flex-shrink-0 w-full md:w-[400px] bg-white rounded-lg overflow-hidden shadow-lg">
+    <div className="flex-shrink-0 w-40 md:w-[400px] bg-white rounded-lg overflow-hidden shadow-lg">
       <div className="relative">
         <img
           src={property.image || "/placeholder.svg"}
           alt={property.title}
-          className="w-full h-[250px] object-cover"
+          className="w-full h-72 object-cover"
         />
         <div className="absolute top-4 left-4 flex gap-2">
           <span className="px-3 py-1 text-sm font-semibold text-black bg-orange-500 rounded">

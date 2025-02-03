@@ -53,7 +53,7 @@ export default function PropertyListings() {
           style={{ transform: `translateX(-${scrollPosition * 30}%)` }}
         >
            {data.map((property) => (
-            <div key={property._id} className="w-96 m-5 flex-shrink-0">
+            <div key={property._id} className="w-80 m-5 flex-shrink-0">
               <PropertyCard property={property} />
             </div>
           ))}
