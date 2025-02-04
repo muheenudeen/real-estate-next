@@ -2,7 +2,7 @@ import axios from "axios";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { toast } from "react-hot-toast";
 
-export const api = axios.create({ baseURL: "http://localhost:5000/api" });
+export const api = axios.create({ baseURL: "https://thithithara.onrender.com/api" });
 
 
 export const useApi = (endpoint, method = "post") => {
