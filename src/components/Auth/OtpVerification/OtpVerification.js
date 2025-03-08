@@ -18,11 +18,14 @@ export default function OtpVerification({ email, isLogin }) {
         onSuccess: (data) => {
           if (isLogin) {
             localStorage.setItem('token', data.data.token)
+            localStorage.setItem('id', data.data.data._id)
+           
+            
             toast.success('Login successful')
-            router.push('/dashboard')
+            router.push('/')
           } else {
             toast.success('Email verified successfully')
-            router.push('/auth')
+            router.push('/auth/loginForm')
           }
         },
         onError: () => {

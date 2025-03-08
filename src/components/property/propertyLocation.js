@@ -7,7 +7,7 @@ import { useApi } from "@/hooks/UseApi";
 
 export default function PropertyLocation() {
   const router = useRouter();
-  const { mutate, isPending } = useApi("/properties", "post");
+  const { mutate, isPending } = useApi("/property", "post");
   const [location, setLocation] = useState({
     state: "",
     city: "",

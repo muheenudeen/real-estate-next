@@ -6,7 +6,7 @@ import { useApi } from "@/hooks/UseApi";
 
 export default function PropertyFeatures() {
   const router = useRouter();
-  const { mutate, isPending } = useApi("/properties", "post");
+  const { mutate, isPending } = useApi("/property", "post");
   const [features, setFeatures] = useState({
     bedrooms: "",
     bathrooms: "",
