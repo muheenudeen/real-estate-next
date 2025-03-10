@@ -3,13 +3,12 @@
 import axios from "axios"
 
 export const api = axios.create({
-  baseURL: "https://thithithara.onrender.com/api ",
+  baseURL: "https://thithithara.onrender.com/api",
   headers: {
     "Content-Type": "application/json",
   },
 })
 
-// Add request interceptor to include auth token on each request
 api.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem("token")
