@@ -1,17 +1,13 @@
-'use client'
+import Providers from "@/components/Providers" // Adjust path if necessary
 
-import { useState } from 'react'
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { Toaster } from 'react-hot-toast'
-
-export default function ClientProviders({ children }) {
-  const [queryClient] = useState(() => new QueryClient())
-
+export default function RootLayout({ children }) {
   return (
-    <QueryClientProvider client={queryClient}>
-      {children}
-      <Toaster position="top-right" />
-    </QueryClientProvider>
+    <html lang="en">
+      <body>
+        <Providers>
+          {children}
+        </Providers>
+      </body>
+    </html>
   )
 }
-
