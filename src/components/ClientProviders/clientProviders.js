@@ -1,4 +1,4 @@
-import Providers from "@/components/Providers" // Adjust path if necessary
+import Providers from "@/app/(property)/provider"
 
 export default function RootLayout({ children }) {
   return (
