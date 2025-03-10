@@ -1,18 +1,22 @@
 import axios from "axios";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { toast } from "react-hot-toast";
+import Cookies from "js-cookie";
 
-export const api = axios.create({ 
-  baseURL: "http://localhost:5000/api",
+// Creating an Axios instance with cookie-based authentication
+export const api = axios.create({
+  baseURL: "https://thithithara.onrender.com/api ",
   headers: {
-    Authorization: `Bearer ${localStorage.getItem("token") || ""}`,
-    "User-Id": localStorage.getItem("id") || "",
-  }
+    Authorization: `Bearer ${Cookies.get("token") || ""}`, // Using Cookies for token
+    "User-Id": typeof window !== "undefined" ? localStorage.getItem("id") || "" : "", // Avoid SSR issue
+  },
 });
 
+// Custom Hook for API calls (GET & POST/PUT/DELETE)
 export const useApi = (endpoint, method = "post") => {
-  const token = localStorage.getItem("token") || "";
-  const userId = localStorage.getItem("id") || "";
+  const token = Cookies.get("token") || ""; // Fetching token from Cookies
+  const userId =
+    typeof window !== "undefined" ? localStorage.getItem("id") || "" : "";
 
   if (method.toLowerCase() === "get") {
     return useQuery({
@@ -22,7 +26,7 @@ export const useApi = (endpoint, method = "post") => {
           headers: {
             Authorization: `Bearer ${token}`,
             "User-Id": userId,
-          }
+          },
         });
         return response.data.propertes;
       },
@@ -38,7 +42,7 @@ export const useApi = (endpoint, method = "post") => {
         headers: {
           Authorization: `Bearer ${token}`,
           "User-Id": userId,
-        }
+        },
       }),
     onError: (error) => {
       toast.error(error.response?.data?.message || "An error occurred");

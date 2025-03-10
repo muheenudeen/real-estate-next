@@ -8,9 +8,9 @@ const Sidebar = () => {
   const [active, setActive] = useState("Add new");
 
   const menuItems = [
-    { name: "Dashboard", icon: <Home size={20} />, link: "/" },
+    { name: "Dashboard", icon: <Home size={20} />, link: "/sidebar/dashboard" },
     { name: "Add new", icon: <List size={20} />, link: "/propertyForm" },
-    { name: "My Properties", icon: <List size={20} />, link: "/properties" },
+    { name: "My Properties", icon: <List size={20} />, link: "/myProperty" },
     { name: "Enquiries", icon: <MessageSquare size={20} />, link: "/enquiries" },
     { name: "My Subscriptions", icon: <List size={20} />, link: "/subscriptions" },
   ];
@@ -21,21 +21,25 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className="h-screen w-64 bg-white shadow-md p-5 flex flex-col">
+    <div className="fixed top-0 left-0 h-screen w-64 bg-white shadow-md p-5 flex flex-col">
       <img
-            src="https://www.thithithara.com/images/logo/logo.png"
-            alt="Logos"
-            className="h-33 md:h-16 "
-            />
+        src="https://www.thithithara.com/images/logo/logo.png"
+        alt="Logos"
+        className="h-16"
+      />
       <div className="mt-6">
         <h3 className="text-gray-500 text-sm uppercase">Main</h3>
         <ul className="mt-2 space-y-2">
           {menuItems.map((item) => (
             <li key={item.name}>
               <Link href={item.link} onClick={() => setActive(item.name)}>
-                <div className={`flex items-center p-2 rounded-lg cursor-pointer ${
-                  active === item.name ? " text-gray-700  hover:bg-blue-500"  : "text-gray-700 hover:bg-blue-500"
-                }`}>
+                <div
+                  className={`flex items-center p-2 rounded-lg cursor-pointer ${
+                    active === item.name
+                      ? "hover:bg-blue-500 text-gray-700"
+                      : "text-gray-700 hover:bg-blue-500 "
+                  }`}
+                >
                   <span className="mr-3">{item.icon}</span>
                   {item.name}
                 </div>
@@ -51,9 +55,13 @@ const Sidebar = () => {
           {accountItems.map((item) => (
             <li key={item.name}>
               <Link href={item.link} onClick={() => setActive(item.name)}>
-                <div className={`flex items-center p-2 rounded-lg cursor-pointer ${
-                  active === item.name ? "bg-red-500 text-white" : "text-gray-700 hover:bg-red-500"
-                }`}>
+                <div
+                  className={`flex items-center p-2 rounded-lg cursor-pointer ${
+                    active === item.name
+                      ? "bg-red-500 text-white"
+                      : "text-gray-700 hover:bg-red-500"
+                  }`}
+                >
                   <span className="mr-3">{item.icon}</span>
                   {item.name}
                 </div>

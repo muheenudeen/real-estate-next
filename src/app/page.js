@@ -1,4 +1,5 @@
 import ContactSection from "@/components/contactSection/contactSection";
+import Footer from "@/components/Footer/footer";
 import Navbar from "@/components/Navbar/Navbar";
 import PartnersAndProperties from "@/components/partners/partners";
 import PropertyListings from "@/components/property/propertyListing";
@@ -43,6 +44,7 @@ export default function Home() {
       <ContactSection/>
 
       <PartnersAndProperties/>
+          <Footer />
 
     </main>
     </>

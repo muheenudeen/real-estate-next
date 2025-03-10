@@ -60,7 +60,7 @@ export default function Navbar() {
             </Link>
             
             <Link
-              href="/sidebar"
+              href="/sidebar/dashboard"
               className="flex items-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors"
             >
               Post Property
