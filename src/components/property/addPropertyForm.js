@@ -69,7 +69,7 @@ export default function AddPropertyForm() {
 
     addProperty(completeData, {
       onSuccess: () => {
-        router.push("/my-properties")
+        router.push("/myProperty")
       },
     })
   }

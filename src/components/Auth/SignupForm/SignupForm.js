@@ -1,39 +1,39 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import { useApi } from '@/hooks/UseApi'
-import { toast } from 'react-hot-toast'
+import { useState } from "react";
+import { useApi } from "@/hooks/UseApi";
+import { toast } from "react-hot-toast";
 
 export default function SignupForm({ onSignupSuccess }) {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    password: '',
-    usertype: 'Individual',
-  })
+    name: "",
+    email: "",
+    phone: "",
+    password: "",
+    usertype: "Individual",
+  });
 
-  const { mutate, isPending } = useApi('/signup')
+  // Use the useApi hook for the signup mutation
+  const { mutate, isPending } = useApi("/signup", "post");
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value })
-  }
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    mutate(
-      formData,
-      {
-        onSuccess: () => {
-          toast.success('Signup successful. Please verify your email.')
-          onSignupSuccess(formData.email)
-        },
-        onError: () => {
-          toast.error('Signup failed. Please try again.')
-        },
-      }
-    )
-  }
+    e.preventDefault();
+
+    // Call the mutate function with the form data
+    mutate(formData, {
+      onSuccess: () => {
+        toast.success("Signup successful. Please verify your email.");
+        onSignupSuccess(formData.email);
+      },
+      onError: () => {
+        toast.error("Signup failed. Please try again.");
+      },
+    });
+  };
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
@@ -87,8 +87,8 @@ export default function SignupForm({ onSignupSuccess }) {
         className="w-full p-2 bg-green-500 text-white rounded"
         disabled={isPending}
       >
-        {isPending ? 'Signing up...' : 'Sign Up'}
+        {isPending ? "Signing up..." : "Sign Up"}
       </button>
     </form>
-  )
+  );
 }

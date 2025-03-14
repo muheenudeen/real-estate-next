@@ -1,28 +1,31 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import { useApi } from '@/hooks/UseApi'
-import { toast } from 'react-hot-toast'
+import { useState } from "react";
+import { useApi } from "@/hooks/UseApi";
+import { toast } from "react-hot-toast";
 
 export default function LoginForm({ onOtpSent }) {
-  const [email, setEmail] = useState('')
-  const { mutate, isPending } = useApi('/sendlogin')
+  const [email, setEmail] = useState("");
+  const { mutate, isPending } = useApi("/sendlogin","post");
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
     mutate(
       { email },
       {
-        onSuccess: () => {
-          toast.success('OTP sent to your email')
-          onOtpSent(email)
+        onSuccess: (data) => {
+          console.log("OTP Sent Response:", data); // Debugging Log
+          toast.success("OTP sent to your email");
+          onOtpSent(email);
         },
-        onError: () => {
-          toast.error('Failed to send OTP. Please try again.')
+        onError: (error) => {
+          console.error("OTP Error:", error.response?.data); // Debugging Log
+          toast.error(error.response?.data?.message || "Failed to send OTP. Please try again.");
         },
       }
-    )
-  }
+    );
+  };
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
@@ -30,7 +33,7 @@ export default function LoginForm({ onOtpSent }) {
         type="email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        placeholder="Email"
+        placeholder="Enter your email"
         className="w-full p-2 border rounded"
         required
       />
@@ -39,9 +42,8 @@ export default function LoginForm({ onOtpSent }) {
         className="w-full p-2 bg-blue-500 text-white rounded"
         disabled={isPending}
       >
-        {isPending ? 'Sending...' : 'Login'}
+        {isPending ? "Sending..." : "Login"}
       </button>
     </form>
-  )
+  );
 }
-

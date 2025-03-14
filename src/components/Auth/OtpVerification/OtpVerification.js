@@ -1,39 +1,37 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import { useApi } from '@/hooks/UseApi'
-import { toast } from 'react-hot-toast'
-import { useRouter } from 'next/navigation'
+import { useState } from "react";
+import { useApi } from "@/hooks/UseApi";
+import { toast } from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 export default function OtpVerification({ email, isLogin }) {
-  const [otp, setOtp] = useState('')
-  const { mutate, isPending } = useApi(isLogin ? '/verify-login-otp' : '/verify-email')
-  const router = useRouter()
+  const [otp, setOtp] = useState("");
+  const { mutate, isPending } = useApi(isLogin ? "/verify-login-otp" : "/verify-email", "post");
+    const router = useRouter();
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     mutate(
       { email, otp },
       {
         onSuccess: (data) => {
           if (isLogin) {
-            localStorage.setItem('token', data.data.token)
-            localStorage.setItem('id', data.data.data._id)
-           
-            
-            toast.success('Login successful')
-            router.push('/')
+            localStorage.setItem("token", data.data.token);
+            localStorage.setItem("id", data.data.data._id);
+            toast.success("Login successful");
+            router.push("/");
           } else {
-            toast.success('Email verified successfully')
-            router.push('/auth/loginForm')
+            toast.success("Email verified successfully");
+            router.push("/login");
           }
         },
         onError: () => {
-          toast.error('Verification failed. Please try again.')
+          toast.error("Verification failed. Please try again.");
         },
       }
-    )
-  }
+    );
+  };
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
@@ -50,9 +48,8 @@ export default function OtpVerification({ email, isLogin }) {
         className="w-full p-2 bg-purple-500 text-white rounded"
         disabled={isPending}
       >
-        {isPending ? 'Verifying...' : 'Verify OTP'}
+        {isPending ? "Verifying..." : "Verify OTP"}
       </button>
     </form>
-  )
+  );
 }
-

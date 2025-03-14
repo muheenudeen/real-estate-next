@@ -9,7 +9,7 @@ const Sidebar = () => {
 
   const menuItems = [
     { name: "Dashboard", icon: <Home size={20} />, link: "/sidebar/dashboard" },
-    { name: "Add new", icon: <List size={20} />, link: "/propertyForm" },
+    { name: "Add new", icon: <List size={20} />, link: "/addProperty" },
     { name: "My Properties", icon: <List size={20} />, link: "/myProperty" },
     { name: "Enquiries", icon: <MessageSquare size={20} />, link: "/enquiries" },
     { name: "My Subscriptions", icon: <List size={20} />, link: "/subscriptions" },
