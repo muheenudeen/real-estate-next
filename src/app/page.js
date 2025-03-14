@@ -37,7 +37,8 @@ export default function Home() {
           </div>
         </div>
         <WhatsAppButton/>
-        {/* <PropertyListings /> */}
+        <PropertyListings />
+
         <PropertySlider />
         <ContactSection />
         <PartnersAndProperties />

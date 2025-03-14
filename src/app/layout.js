@@ -1,7 +1,5 @@
 import ClientProviders from '@/components/ClientProviders/clientProviders';
-import Navbar from '@/components/Navbar/Navbar';
 import '@/app/globals.css';
-import Footer from '@/components/Footer/footer';
 
 export const metadata = {
   title: 'Real Estate Platform',

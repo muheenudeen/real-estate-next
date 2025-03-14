@@ -63,7 +63,7 @@ export default function BasicInfo({ formData, updateFormData, onNext }) {
           <div className="mb-4">
             <label className="block text-gray-700 mb-2">What kind of property do you have?</label>
             <select
-              className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full  p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               defaultValue="Residential"
             >
               <option value="Residential">Residential</option>

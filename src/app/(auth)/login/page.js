@@ -6,7 +6,6 @@ import AuthForm from "@/components/Auth/AuthForm/AuthForm";
 
 export default function LoginPage() {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
-
   return (
     <div>
       <button
