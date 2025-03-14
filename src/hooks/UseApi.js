@@ -14,6 +14,7 @@ export const api = axios.create({
 
 api.interceptors.request.use((config) => {
   const token = Cookies.get("token") || "";
+  const id = localStorage.getItem("id")
   const userId = typeof window !== "undefined" ? localStorage.getItem("id") || "" : "";
 
   if (token) {

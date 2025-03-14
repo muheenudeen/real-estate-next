@@ -4,10 +4,13 @@ import { useGetProperties } from "@/hooks/useProperty";
 import { useRouter } from "next/navigation";
 import { FaPlusCircle } from "react-icons/fa";
 import Sidebar from "@/app/sidebar/page";
+import Image from "next/image";
 
 const MyProperties = () => {
-  const { data: properties, isLoading } = useGetProperties();
   const router = useRouter();
+  const id = typeof window !== "undefined" ? localStorage.getItem("id") : null;
+
+  const { data: properties, isLoading, error } = useGetProperties(id);
 
   return (
     <div className="flex">
@@ -26,6 +29,14 @@ const MyProperties = () => {
           {/* Loading State */}
           {isLoading && <p className="text-center text-gray-500">Loading properties...</p>}
 
+          {/* Error State */}
+          {error && (
+            <div className="bg-red-50 border border-red-200 text-red-700 p-4 rounded-md">
+              Error loading properties: {error.message}
+            </div>
+          )}
+
+          {/* No Properties State */}
           {!isLoading && (!properties || properties.length === 0) && (
             <div className="text-center mt-12">
               <h2 className="text-2xl font-semibold text-gray-800">My Property Listings (0)</h2>
@@ -36,17 +47,17 @@ const MyProperties = () => {
             </div>
           )}
 
+          {/* Properties Grid */}
           {!isLoading && properties?.length > 0 && (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {properties.map((property) => (
                 <div key={property._id} className="bg-white p-4 rounded-lg shadow-lg">
                   <div className="w-full h-48 relative">
-                    <img
+                    <Image
                       src={property.image || "/placeholder.jpg"}
                       alt={property.name || "Property Image"}
-                      layout="fill"
-                      objectFit="cover"
-                      className="rounded-lg"
+                      fill
+                      className="rounded-lg object-cover"
                       priority
                     />
                   </div>

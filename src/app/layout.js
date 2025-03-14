@@ -15,5 +15,5 @@ export default function RootLayout({ children }) {
         </ClientProviders>
       </body>
     </html>
-  );
+  )
 }

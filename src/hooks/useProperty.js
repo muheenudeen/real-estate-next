@@ -6,6 +6,6 @@ export const useAddProperty = () => {
   return useApi("/property", "post");
 };
 
-export const useGetProperties = () => {
-  return useApi("/property", "get");
-};
+export const useGetProperties = (id) => {
+  return useApi(id ? `/property/${id}` : null, "get");
+}
