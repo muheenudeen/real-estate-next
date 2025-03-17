@@ -1,6 +1,9 @@
-// next.config.mjs
-export default {
+const nextConfig = {
     images: {
-        domains: ['www.thithithara.com', 'example.com', 'localhost'],
+      domains: ['www.thithithara.com', 'example.com', 'localhost'],
     },
-  }
+    output: 'standalone',
+  };
+  
+  export default nextConfig;
+  
