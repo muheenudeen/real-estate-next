@@ -1,4 +1,5 @@
-import ClientProviders from '@/components/ClientProviders/clientProviders';
+import Providers from './provider';
+
 import '@/app/globals.css';
 
 export const metadata = {
@@ -10,9 +11,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <ClientProviders>
+        <Providers>
           {children}
-        </ClientProviders>
+        </Providers>
       </body>
     </html>
   )
