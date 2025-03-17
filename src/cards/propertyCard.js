@@ -2,6 +2,7 @@
 
 import { Bed, Bath, Maximize, Building2 } from "lucide-react"
 
+
 export function PropertyCard({ property }) {
   return (
     <div className="flex-shrink-0 w-full bg-white rounded-xl overflow-hidden shadow-lg cursor-pointer hover:shadow-xl transition-shadow duration-300 border border-gray-100">
